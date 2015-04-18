@@ -1,0 +1,74 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="EngApp.AddPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit = "clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="Bar" IsVisible="True"
+                              IsMenuEnabled="False"
+                              BackgroundColor="{StaticResource PhoneProgressBarBackgroundColor}">
+            <shell:ApplicationBarIconButton 
+                IconUri="/Assets/Images/check.png" 
+                Text="add"
+                Click="OnCheckButtonClick"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <Grid Background="BurlyWood">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="12" Grid.Row="0" Style="{StaticResource PhoneTextTitle1Style}" Text="Add Category"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" Text="Enter the name of the Category"/>
+            <TextBox x:Name="NameTextBox" Height="72" KeyUp="NameTextBox_KeyUp" />
+        </StackPanel>
+        <TextBox TextWrapping="Wrap" x:Name="WordsTextBox" Grid.Row="2" HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch" KeyUp="WordsTextBox_KeyUp"
+                   />
+        <TextBlock x:Name="DescriptionTextBlock" Margin="12" Grid.Row="3" TextWrapping="Wrap" >
+            <TextBlock.Text>
+                Enter the words you want to be in the category, separate by space.
+                You can also use Bing's optical recognition to scan words and paste them into the textbox.
+            </TextBlock.Text>
+        </TextBlock>
+        <phone:LongListSelector Height="0" Width="0" Grid.Row="0" x:Name="wtf" />
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,53 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="EngApp.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    shell:SystemTray.IsVisible="False">
+
+    <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="temp" TargetType="TextBox" >
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton Text="ok" IconUri="/Assets/Images/check.png" Click="ApplicationBarIconButton_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush Opacity=".2" ImageSource="/Assets/bg.jpg" />
+        </Grid.Background>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="panel" Grid.Row="0" Margin="12">
+            <TextBlock Foreground="Black" Text="English" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Foreground="Black" Text="edit the flashcard" Style="{StaticResource PhoneTextTitle2Style}"/>
+            <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" TextAlignment="Center" Foreground="Black" Text="{Binding Word}" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+
+        <StackPanel Grid.Row="1" x:Name="list" Orientation="Vertical"></StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

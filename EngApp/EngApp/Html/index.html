@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./css/phone.css" />
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery.ui.custom.js"></script>
+    <script type="text/javascript" src="./js/data_en.js"></script>
+    <script type="text/javascript" src="./js/external.js"></script>
+    <script type="text/javascript" src="./js/code.js"></script>
+    <title>90 Seconds</title>
+  </head>
+  
+  <body class="medium">
+
+    <audio id="gamemusic">
+      <source src="./music/song.mp3" />
+    </audio>
+    
+    <div id="menu" class="viewframe" style="display:block;">
+      <div id="logo"></div>
+      <img class="button play" alt="" src="./images/button_play.png" onclick="changeView('counter');" />
+      <img class="button options settings" alt="" src="./images/button_settings.png" onclick="changeView('settings');" />
+      <img class="button options ranking" alt="" src="./images/button_ranking.png" onclick="changeView('highscores');" />
+      <img class="button options help" alt="" src="./images/button_info.png" onclick="changeView('about');" />
+      
+    </div>
+
+    <div id="counter" class="viewframe">
+      <img class="count" id="count3" alt="" src="./images/count3.png" />
+      <img class="count" id="count2" alt="" src="./images/count2.png" />
+      <img class="count" id="count1" alt="" src="./images/count1.png" />
+    </div>
+
+    <div id="game" class="viewframe">
+      <div id="category_name">
+        <table>
+          <tr>
+            <td>
+              <span id="category_name_text">Category Name</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="game_letter"></div>
+      <div id="textbox">
+        <div id="textbox_text"></div>
+        <div id="textbox_skip" onclick="keyboard_pressed('BIG_ARROW')"></div>
+      </div>
+      <div id="keyboard_pane">
+        <div id="countline"></div>
+        <img id="keyboard" alt="" src="./images/keyboard.png" usemap="#keyboard_map"  />
+        <map name="keyboard_map">
+          <area shape="rect" coords="3,33,45,111" href="javascript:keyboard_pressed('Q')" alt="q" />
+          <area shape="rect" coords="51,33,93,111" href="javascript:keyboard_pressed('W')" alt="w" />
+          <area shape="rect" coords="99,33,141,111" href="javascript:keyboard_pressed('E')" alt="e" />
+          <area shape="rect" coords="147,33,189,111" href="javascript:keyboard_pressed('R')" alt="r" />
+          <area shape="rect" coords="195,33,237,111" href="javascript:keyboard_pressed('T')" alt="t" />
+          <area shape="rect" coords="243,33,285,111" href="javascript:keyboard_pressed('Y')" alt="y" />
+          <area shape="rect" coords="291,33,333,111" href="javascript:keyboard_pressed('U')" alt="u" />
+          <area shape="rect" coords="339,33,381,111" href="javascript:keyboard_pressed('I')" alt="i" />
+          <area shape="rect" coords="387,33,429,111" href="javascript:keyboard_pressed('O')" alt="o" />
+          <area shape="rect" coords="435,33,477,111" href="javascript:keyboard_pressed('P')" alt="p" />
+
+          <area shape="rect" coords="27,117,69,195" href="javascript:keyboard_pressed('A')" alt="a" />
+          <area shape="rect" coords="75,117,117,195" href="javascript:keyboard_pressed('S')" alt="s" />
+          <area shape="rect" coords="123,117,165,195" href="javascript:keyboard_pressed('D')" alt="d" />
+          <area shape="rect" coords="171,117,213,195" href="javascript:keyboard_pressed('F')" alt="f" />
+          <area shape="rect" coords="219,117,261,195" href="javascript:keyboard_pressed('G')" alt="g" />
+          <area shape="rect" coords="267,117,309,195" href="javascript:keyboard_pressed('H')" alt="h" />
+          <area shape="rect" coords="315,117,357,195" href="javascript:keyboard_pressed('J')" alt="j" />
+          <area shape="rect" coords="363,117,405,195" href="javascript:keyboard_pressed('K')" alt="k" />
+          <area shape="rect" coords="411,117,453,195" href="javascript:keyboard_pressed('L')" alt="l" />
+
+          <area shape="rect" coords="3,201,69,279" href="javascript:keyboard_pressed('REM')" alt="rem" />
+          <area shape="rect" coords="75,201,117,279" href="javascript:keyboard_pressed('Z')" alt="z" />
+          <area shape="rect" coords="123,201,165,279" href="javascript:keyboard_pressed('X')" alt="x" />
+          <area shape="rect" coords="171,201,213,279" href="javascript:keyboard_pressed('C')" alt="c" />
+          <area shape="rect" coords="219,201,261,279" href="javascript:keyboard_pressed('V')" alt="v" />
+          <area shape="rect" coords="267,201,309,279" href="javascript:keyboard_pressed('B')" alt="b" />
+          <area shape="rect" coords="315,201,357,279" href="javascript:keyboard_pressed('N')" alt="n" />
+          <area shape="rect" coords="363,201,405,279" href="javascript:keyboard_pressed('M')" alt="m" />
+          <area shape="rect" coords="411,201,477,279" href="javascript:keyboard_pressed('DEL')" alt="del" />
+
+          <area shape="rect" coords="3,285,117,363" href="javascript:keyboard_pressed('SKIP')" alt="rem" />
+          <area shape="rect" coords="123,285,357,363" href="javascript:keyboard_pressed(' ')" alt="x" />
+          <area shape="rect" coords="363,285,477,363" href="javascript:keyboard_pressed('SEND')" alt="del" />
+
+        </map>
+      </div>
+    </div>
+
+    <div id="resultsframe" class="viewframe">
+      <img src="./images/total_points.png" alt="" id="total_points" />
+      <div id="points">
+        <img class="pointtype" id="pointsn" src="./images/minus.png" alt="" />
+        <img class="pointtype" id="points0" src="./images/9.png" alt="" />
+        <img class="pointtype" id="points1" src="./images/9.png" alt="" />
+        <img class="pointtype" id="points2" src="./images/9.png" alt="" />
+      </div>
+      <div id="results">
+        <div id="word_boxes_box">
+          <div id="word_boxes_frame">
+            <div id="word_boxes">
+              <!--<div class="wordresult"></div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="publicity" style="position:absolute;left:0px;bottom:0px;height:75px;width:480px;background:black;"></div>
+    </div>
+
+    <div id="settings" class="viewframe">
+      <img src="./images/settings_title.png" alt="" class="frame_title" />
+
+      <div id="options">
+        <img class="section_title" src="./images/settings_languages.png" alt="" /><br/>
+        <div class="setting_options">
+          <img class="flags flag_en active" id="flag_en" src="./images/flag_en.png" alt="English" onclick="changeLanguageToNew('en')" />
+        </div>
+
+        <img class="section_title" src="./images/settings_music.png" alt="" />
+        <br/>
+        <div class="setting_options">
+          <img id="settings_music" src="./images/settings_sound_off.png" class="settings_button" onclick="changeSettingMusic()" alt="" />
+        </div>
+
+        <img class="section_title" src="./images/settings_reset.png" alt="" />
+        <br/>
+        <div class="setting_options">
+          <img id="settings_music" src="./images/settings_reset_button.png" class="settings_button" onclick="resetSettings()" alt="" />
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div id="about" class="viewframe">
+      <img src="./images/about_title.png" alt="" class="frame_title" />
+      <img src="./images/about_text.png" alt="" class="big_text" />
+    </div>
+
+    <div id="highscores" class="viewframe">
+      <img src="./images/awards_title.png" alt="" class="frame_title" />
+      <img src="./images/best_score.png" alt="" class="highscore_title" id="highscore_max"/>
+      <img src="./images/worst_score.png" alt="" class="highscore_title" id="highscore_min"/>
+      <img src="./images/average_score.png" alt="" class="highscore_title" id="highscore_avg"/>
+      <div class="highscore_value" id="highscore_value_max"></div>
+      <div class="highscore_value" id="highscore_value_min"></div>
+      <div class="highscore_value" id="highscore_value_avg"></div>
+    </div>    
+      
+  </body>
+  
+</html>

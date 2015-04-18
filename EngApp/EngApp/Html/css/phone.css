@@ -1,0 +1,371 @@
+﻿@media all and (orientation:portrait) {
+    @-ms-viewport {
+        width:480px;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
+		background-color:#7ecfea;
+    }
+}
+
+@media all and (orientation:landscape) {
+    @-ms-viewport {
+        width:480px;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
+		background-color:#7ecfea;
+    }
+}
+
+* {
+	margin:0px;
+	padding:0px;
+	border:0px;
+	text-align:left;
+	font-family:"Segoe WP", "Segoe", "Arial", "sans-serif";
+	border-collapse:collapse;
+	user-select:none;
+	-ms-user-select:none;
+	outline:none;
+}
+
+html, body {
+	text-align:center;
+	-ms-touch-action:none;
+}
+
+.frame_title {
+	position:absolute;
+	top:12px;
+	left:8px;
+}
+
+.big_text {
+	width:450px;
+	height:700px;
+	position:absolute;
+	top:70px;
+	left:20px;
+}
+
+.highscore_title {
+	position:absolute;
+	left:24px;
+	z-index:2;
+}
+
+#highscore_max { top:140px; }
+#highscore_min { top:300px; }
+#highscore_avg { top:460px; }
+
+
+.highscore_value {
+	position:absolute;
+	right:24px;
+	text-align:right;
+	z-index:3;
+}
+
+#highscore_value_max { top:180px; }
+#highscore_value_min { top:340px; }
+#highscore_value_avg { top:500px; }
+
+
+.highscore_value img { height: 100px; }
+
+.viewframe {
+	width:100%;
+	
+	height:100%;
+	background:#77bbdd;
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+
+/*********** MENU ***********/
+div#logo {
+	width:266px;
+	height:276px;
+	position:absolute;
+	top:50px;
+	left:107px;
+	background:url("../images/logo.png") no-repeat center center;
+}
+
+.button {
+	position:absolute;
+}
+
+.button.options {
+	bottom:64px;	
+	width:82px;
+	height:90px;
+}
+
+.button.play {
+	width:380px;
+	height:90px;
+	left:50px;
+	bottom:170px;
+}
+
+.button.settings {
+	left:50px;
+}
+
+.button.ranking {
+	left:199px;
+}
+
+.button.help {
+	left:348px;
+}
+/*****************************/
+
+/**** COUNT ****/
+.count {
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-125px;
+	margin-left:-125px;
+	width:250px;
+	height:250px;
+	display:none;
+}
+/**** COUNT ****/
+
+/**** GAME ****/
+#category_name {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:480px;
+	height:90px;
+	background:url("../images/category_name.png") no-repeat top left;
+	overflow:hiden;
+}
+
+#category_name table, #category_name table tr, #category_name table tr td {
+	width:100%;
+	height:90px !important;
+	text-align:center;
+	vertical-align:middle;
+	overflow:hiden;
+}
+
+#category_name_text {
+	color:#f0f0ff;
+	font-size:32px;
+	text-shadow:1px 1px 1px #000033;
+}
+
+#keyboard, #keyboard_pane {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:480px;
+	height:369px;
+	z-index:2;
+}
+
+#countline {
+	position:absolute;
+	left:0px;
+	top:6px;
+	height:21px;
+	width:480px;
+	background-color:#d0e0ee;
+	z-index:3;
+}
+
+#word_boxes {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+#textbox {
+	position:absolute;
+	top:230px;
+	left:16px;
+	width:448px;
+	height:90px;
+	background:url("../images/textbox.png") no-repeat top left;
+}
+
+#textbox_skip {
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:84px;
+	height:90px;
+}
+
+#textbox_text {
+	width:345px;
+	height:90px;
+	position:absolute;
+	top:0px;
+	left:17px;
+	line-height:82px;
+	font-size:24px;
+	color:#333333;
+	overflow:hidden;
+}
+
+#game_letter {
+	position:absolute;
+	top:70px;
+	left:50%;
+	width:192px;
+	height:192px;
+	margin-left:-96px;
+	background:url("../images/a.png") no-repeat center center;
+}
+/**** GAME ****/
+
+
+/**** RESULTS ****/
+#total_points {
+	position:absolute;
+	top:16px;
+	left:16px;
+	z-index:2;
+}
+
+#points {
+	position:absolute;
+	top:16px;
+	right:16px;
+	z-index:8;
+}
+
+.button_back {
+	position:absolute;
+	left:16px;
+	bottom:16px;
+	width:82px;
+	height:90px;
+	z-index:9999;
+	background:url("../images/button_back.png") no-repeat center center;
+}
+
+#results {
+	position:absolute;
+	/*bottom:16px;*/
+	/*bottom:91px;*/
+	top: 180px;
+	left:16px;
+	width:448px;
+	height:550px;
+	overflow:hidden;
+}
+
+#word_boxes_box {
+	width:448px;
+	height:560px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	overflow:visible;
+}
+
+#word_boxes_frame {
+	width:400px;
+	height:auto;
+	overflow:visible;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.wordresult {
+	width:448px;
+	height:90px;
+	margin-bottom:22px;
+	position:relative;
+	background:url("../images/wordresult.png") no-repeat top left;
+	display:none;
+	overflow:hidden;
+}
+
+.wordresult.bonus {
+	background:none !important;
+}
+
+.wordresult.bonus img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:90px;
+	width:448px;
+}
+
+.wordresult.correct {
+	background:url("../images/wordresult_correct.png") no-repeat top left;
+}
+
+.wordresult.incorrect {
+	background:url("../images/wordresult_incorrect.png") no-repeat top left;
+}
+
+.wordresult.skipped {
+	background:url("../images/wordresult_skipped.png") no-repeat top left;
+}
+
+.wordresult div {
+	float:left;
+}
+
+.wordresult .points {
+	width:82px;
+	height:82px;
+	text-align:center;
+	line-height:82px;
+	color:#f0f0f0;
+	font-size:48px;
+}
+
+.wordresult .category {
+	font-weight:bold;
+	font-size:24px;
+	width:330px;
+	margin-left:12px;
+}
+
+.wordresult .answer {
+	font-size:40px;
+	width:330px;
+	margin-left:12px;
+}
+/**** RESULTS ****/
+
+#options {
+position:absolute;
+width:440px;
+left:20px;
+top:120px;
+}
+
+.section_title {
+	margin-top:32px;
+}
+
+.flags {
+	width:120px;
+	border:5px solid #77bbdd;
+	margin:8px;
+}
+
+.flags.active {
+	border:5px solid #ffffff;
+}
+
+.settings_button {
+	width:440px;
+}
+
